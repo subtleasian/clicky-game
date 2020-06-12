@@ -1,21 +1,25 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import Jumbotron from "./components/Jumbotron";
+import Container from "./components/Container";
+import MemoryCard from "./components/MemoryCard";
+import bobaFett from "./images/boba-fett.png";
+import c3po from "./images/c3po.png";
+import chewbacca from "./images/chewbacca.png";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+// use react State to create click listner method on each card passed into Container
+// use State to track times that a card has been clicked
+// create method to handle reset of cards once a card has been clicked twice
+// create method to render images in a different order for interactivity
+
+function App() {
+  return (
+    <Container>
+      <Jumbotron />
+      <MemoryCard image={bobaFett} />
+      <MemoryCard image={chewbacca} />
+      <MemoryCard image={c3po} />
+    </Container>
+  );
 }
 
 export default App;
